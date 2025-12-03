@@ -54,6 +54,10 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.draw.clip
+import androidx.compose.foundation.Image
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.Alignment
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
@@ -131,9 +135,15 @@ fun HeroListItem(
                         .clip(RoundedCornerShape(8.dp))
 
                 ) {
+                    Image(
+                        painter = painterResource(hero.imageRes),
+                        contentDescription = null,
+                        alignment = Alignment.TopCenter,
+                        contentScale = ContentScale.FillWidth
+                    )
             }
         }
-}
+    }
 }
 
 @Preview("Light Theme")
